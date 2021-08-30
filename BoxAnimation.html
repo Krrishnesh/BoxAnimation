@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Krishnesh Khalora</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+<body>
+
+  <style>
+    .container{
+      margin-left:auto;
+      margin-right: auto;
+      max-width:800px;
+      min-width: 100px;
+      height:500px;
+      margin-top: 50px;
+    }
+    
+    .container > .box{
+      height: 200px;
+      width:inherit;
+      background-color: rgb(5, 5, 51);
+      border:10px solid rgb(5, 5, 51);
+      display: flex;
+    }
+
+    .container > .box > div{
+      display: flex;
+      width:20%;
+      align-self: flex-end;
+      
+    }
+
+    .container > .button{
+      width:inherit;
+      height:100px;
+      background-color: lawngreen;
+    }
+
+    .buttons{
+      width:inherit;
+      padding:20px;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+<div class="container">
+   <div class="box">
+      <div id="block1" style="background-color: purple;height: 100%;" ></div>
+      <div id="block2" style="background-color:rgb(204, 85, 105);height:100%;" ></div>
+      <div id="block3" style="background-color:palevioletred;height:100%;" ></div>
+      <div id="block4" style="background-color:coral;height:100%;" ></div>
+      <div id="block5" style="background-color: rgb(238, 191, 37);height:100%"></div>
+   </div>
+   <div class="buttons">
+     
+     
+     <button onclick="onStart()"  style="background-color: rgb(9, 114, 9);color: white;width:80px;border-radius: 4px;float:left;margin-left: 20%;">Start</button>
+     <button onclick="onStop()" style="background-color: red;color: white;width:80px;border-radius: 4px;float:right;margin-right: 20%;">Stop</button>
+
+   </div>
+</div>
+
+<script >
+  function onStart(){
+    timer = setInterval(
+      function changeHeight(){
+        document.getElementById("block1").style.height =(Math.random()*100)+"%";
+        document.getElementById("block2").style.height =(Math.random()*100)+"%";
+        document.getElementById("block3").style.height =(Math.random()*100)+"%";
+        document.getElementById("block4").style.height =(Math.random()*100)+"%";
+        document.getElementById("block5").style.height =(Math.random()*100)+"%";
+      } ,1000);
+  }
+
+  function onStop(){
+    clearInterval(timer)
+  }
+</script>
+
+
+
+
+</body>
+</html>
